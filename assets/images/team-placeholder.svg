@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#1a1b24"/>
+  <circle cx="200" cy="155" r="70" fill="#ff6b2b" opacity=".18"/>
+  <circle cx="200" cy="155" r="50" fill="#ff6b2b" opacity=".25"/>
+  <text x="200" y="162" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial Black,sans-serif" font-size="36" fill="#ff6b2b" opacity=".7">👤</text>
+  <rect x="80" y="260" width="240" height="6" rx="3" fill="#ff6b2b" opacity=".15"/>
+  <rect x="120" y="280" width="160" height="5" rx="2.5" fill="#ff6b2b" opacity=".1"/>
+  <text x="200" y="340" text-anchor="middle" font-family="Arial,sans-serif"
+        font-size="13" fill="#ff6b2b" opacity=".5">Replace with team photo</text>
+  <text x="200" y="360" text-anchor="middle" font-family="Arial,sans-serif"
+        font-size="11" fill="rgba(240,237,232,.3)">400 × 400 px recommended</text>
+</svg>

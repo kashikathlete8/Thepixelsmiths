@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThePixelSmiths — Crafting Pixels, Telling Stories</title>
+  <meta name="description" content="ThePixelSmiths — Creative studio specialising in video editing, graphic design and web creation.">
+  <meta property="og:title" content="ThePixelSmiths — Crafting Pixels, Telling Stories">
+  <meta property="og:description" content="We turn raw ideas into something people can't ignore.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-logo">The<b>Pixel</b>Smiths</div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+  <div style="font-size:.7rem;color:var(--muted);letter-spacing:2.5px;">CRAFTING YOUR EXPERIENCE...</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="n-logo">The<b>Pixel</b>Smiths</a>
+  <ul class="n-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#" class="n-login" onclick="openLogin(event)">⚙ Team Login</a></li>
+  </ul>
+  <button class="n-ham" onclick="toggleMob()" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mob-menu">
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#work" onclick="closeMob()">Work</a>
+  <a href="#about" onclick="closeMob()">About Us</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="#" onclick="openLogin(event);closeMob();" style="color:var(--orange)">⚙ Team Login</a>
+</div>
+
+<!-- HOME -->
+<section id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">✦ Creative Studio — Est. 2025 ✦</div>
+    <h1 class="hero-h1">
+      <span class="stroke">PIXELS</span><br>
+      <span class="fill">INTO</span><br>
+      <span class="stroke">STORIES</span>
+    </h1>
+    <p class="hero-p">Video editing · Graphic design · Web creation.<br>We turn raw ideas into something people can't ignore.</p>
+    <div class="hero-btns">
+      <a href="#work" class="btn-p">See Our Work →</a>
+      <a href="#contact" class="btn-s">Let's Collab</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <div class="mq-track">
+    <span>VIDEO EDITING</span><span class="star"> ✦ </span><span>GRAPHIC DESIGN</span><span class="star"> ✦ </span><span>WEB CREATION</span><span class="star"> ✦ </span><span>BRAND IDENTITY</span><span class="star"> ✦ </span><span>MOTION GRAPHICS</span><span class="star"> ✦ </span><span>UI / UX DESIGN</span><span class="star"> ✦ </span><span>VIDEO EDITING</span><span class="star"> ✦ </span><span>GRAPHIC DESIGN</span><span class="star"> ✦ </span><span>WEB CREATION</span><span class="star"> ✦ </span><span>BRAND IDENTITY</span><span class="star"> ✦ </span><span>MOTION GRAPHICS</span><span class="star"> ✦ </span><span>UI / UX DESIGN</span><span class="star"> ✦ </span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat-box rv"><span class="stat-n" data-t="50">0</span><div class="stat-l">Projects Done</div></div>
+    <div class="stat-box rv" style="transition-delay:.07s"><span class="stat-n" data-t="20">0</span><div class="stat-l">Happy Clients</div></div>
+    <div class="stat-box rv" style="transition-delay:.14s"><span class="stat-n" data-t="3">0</span><div class="stat-l">Core Crafts</div></div>
+    <div class="stat-box rv" style="transition-delay:.21s"><span class="stat-n" data-t="100">0</span><div class="stat-l">% Passion</div></div>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work" class="sec">
+  <div class="sec-header rv">
+    <span class="sec-tag">Our Portfolio</span>
+    <h2 class="sec-h">Our <span class="stroke2">Work</span></h2>
+    <p class="sec-sub">Every frame, every pixel, every line — crafted with intent.</p>
+  </div>
+  <div class="work-tabs">
+    <button class="w-tab on" onclick="switchTab('video',this)">🎬 Video Editing</button>
+    <button class="w-tab" onclick="switchTab('design',this)">🎨 Graphic Design</button>
+    <button class="w-tab" onclick="switchTab('web',this)">🌐 Web Projects</button>
+  </div>
+  <div class="w-panel on" id="panel-video"><div class="w-grid" id="grid-video"></div></div>
+  <div class="w-panel" id="panel-design"><div class="w-grid" id="grid-design"></div></div>
+  <div class="w-panel" id="panel-web"><div class="w-grid" id="grid-web"></div></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="cbg" id="cbg"></div>
+  <div class="about-inner">
+    <div class="about-intro rv">
+      <span class="sec-tag">The Team</span>
+      <h2 class="about-h">Meet The Smiths 👾</h2>
+      <p class="about-p">We're ThePixelSmiths — a scrappy, passionate creative studio turning ideas into visual magic. New to the scene, loud in the work.</p>
+    </div>
+    <div class="team-grid" id="team-grid">
+
+      <div class="flip-wrap rv">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="av-ring"><div class="av-ph" style="background:linear-gradient(135deg,#ff6b2b,#f5c542)">PS</div></div>
+            <div class="t-name">The Founder</div>
+            <span class="t-role">🚀 Studio Lead</span>
+            <p class="t-bio">The visionary behind ThePixelSmiths. Passionate about building creative work that actually matters.</p>
+            <div class="skill-bars">
+              <div class="sb-label"><span>Vision</span><span>95%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="95"></div></div>
+              <div class="sb-label"><span>Creativity</span><span>98%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="98"></div></div>
+            </div>
+            <!-- Mobile strip (hidden on desktop, shown on mobile instead of flip) -->
+            <div class="mob-back-strip" style="display:none">
+              <p class="mob-back-quote">"Build things people stop to look at. Then make them better."</p>
+              <p style="font-size:.78rem;color:rgba(240,237,232,.65);line-height:1.55;">Leading from idea to execution. Obsessed with brand storytelling and pixel-perfect results across every medium.</p>
+              <a href="#contact" class="mob-back-link">Know More →</a>
+            </div>
+            <div class="flip-hint">hover to flip ↻</div>
+          </div>
+          <div class="flip-back">
+            <div class="back-icon">🚀</div>
+            <blockquote class="back-quote">"Build things people stop to look at. Then make them better."</blockquote>
+            <p class="back-bio">Leading ThePixelSmiths from idea to execution. Obsessed with brand storytelling and pixel-perfect results across every medium.</p>
+            <a href="#contact" class="back-link">Know More →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-wrap rv" style="transition-delay:.1s">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="av-ring"><div class="av-ph" style="background:linear-gradient(135deg,#ff4d6d,#ff6b2b)">VE</div></div>
+            <div class="t-name">Video Editor</div>
+            <span class="t-role" style="background:rgba(255,77,109,.12);border-color:rgba(255,77,109,.28);color:#ff4d6d">🎬 Motion Artist</span>
+            <p class="t-bio">Tells stories through frames. From raw footage to cinematic masterpieces — this is our edit wizard.</p>
+            <div class="skill-bars">
+              <div class="sb-label"><span>Premiere Pro</span><span>90%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="90" style="background:linear-gradient(90deg,#ff4d6d,#ff6b2b)"></div></div>
+              <div class="sb-label"><span>After Effects</span><span>85%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="85" style="background:linear-gradient(90deg,#ff4d6d,#ff6b2b)"></div></div>
+            </div>
+            <div class="mob-back-strip" style="display:none">
+              <p class="mob-back-quote" style="border-color:#ff4d6d">"Every cut is a decision. I make every frame count."</p>
+              <p style="font-size:.78rem;color:rgba(240,237,232,.65);line-height:1.55;">Brand films, wedding cinematography, and social media reels. Brings stories to life frame by frame.</p>
+              <a href="#contact" class="mob-back-link" style="background:#ff4d6d">Know More →</a>
+            </div>
+            <div class="flip-hint">hover to flip ↻</div>
+          </div>
+          <div class="flip-back">
+            <div class="back-icon">🎬</div>
+            <blockquote class="back-quote" style="border-color:#ff4d6d">"Every cut is a decision. I make every frame count."</blockquote>
+            <p class="back-bio">Specialising in brand films, wedding cinematography, and social media reels. Brings stories to life frame by frame with a cinematic eye.</p>
+            <a href="#contact" class="back-link" style="background:#ff4d6d">Know More →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-wrap rv" style="transition-delay:.2s">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="av-ring"><div class="av-ph" style="background:linear-gradient(135deg,#1de9b6,#0288d1)">GD</div></div>
+            <div class="t-name">Graphic Designer</div>
+            <span class="t-role" style="background:rgba(29,233,182,.1);border-color:rgba(29,233,182,.28);color:var(--teal)">🎨 Design Wizard</span>
+            <p class="t-bio">Typography, color, composition. Turns a blank canvas into a brand statement people stop to look at.</p>
+            <div class="skill-bars">
+              <div class="sb-label"><span>Figma</span><span>92%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="92" style="background:linear-gradient(90deg,#1de9b6,#0288d1)"></div></div>
+              <div class="sb-label"><span>Illustrator</span><span>88%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-w="88" style="background:linear-gradient(90deg,#1de9b6,#0288d1)"></div></div>
+            </div>
+            <div class="mob-back-strip" style="display:none">
+              <p class="mob-back-quote" style="border-color:#1de9b6">"Good design is invisible. Great design is unforgettable."</p>
+              <p style="font-size:.78rem;color:rgba(240,237,232,.65);line-height:1.55;">Logos, brand kits, social media visuals, and print designs. Making brands feel alive on every platform.</p>
+              <a href="#contact" class="mob-back-link" style="background:#1de9b6;color:#0b0c10">Know More →</a>
+            </div>
+            <div class="flip-hint">hover to flip ↻</div>
+          </div>
+          <div class="flip-back">
+            <div class="back-icon">🎨</div>
+            <blockquote class="back-quote" style="border-color:var(--teal)">"Good design is invisible. Great design is unforgettable."</blockquote>
+            <p class="back-bio">Creating logos, brand kits, social media visuals, and print designs. Passionate about colour theory and making brands feel alive on every platform.</p>
+            <a href="#contact" class="back-link" style="background:var(--teal);color:#0b0c10">Know More →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="vals rv">
+      <div class="val-p"><div class="v-dot"></div>Pixel Perfect</div>
+      <div class="val-p" style="border-color:rgba(255,77,109,.22)"><div class="v-dot" style="background:#ff4d6d"></div>Story First</div>
+      <div class="val-p" style="border-color:rgba(245,197,66,.22)"><div class="v-dot" style="background:var(--gold)"></div>Always Vibing</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div class="contact-inner">
+    <div class="rv">
+      <span class="sec-tag">Get In Touch</span>
+      <h2 class="sec-h">Let's Build Something<br><span style="color:var(--orange)">Wild</span> 🔥</h2>
+      <p class="contact-sub">Got a project? A wild idea? Just want to say hi?<br>We're all ears — and all pixels.</p>
+      <div class="open-banner">✦ OPEN FOR COLLABORATIONS · FREELANCE · FULL-TIME · PASSION PROJECTS · LET'S CREATE ✦</div>
+      <a href="https://wa.me/919306644363?text=Hi%20ThePixelSmiths!%20I%20found%20you%20online%20and%20would%20love%20to%20discuss%20a%20project%20%F0%9F%9A%80" target="_blank" class="wa-btn">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+        Chat on WhatsApp 💬
+      </a>
+      <p class="wa-note">Fast replies. Real humans. No bots. 📲 +91 93066 44363</p>
+    </div>
+    <div class="c-div">or drop us a message</div>
+    <form class="c-form rv" onsubmit="submitForm(event)">
+      <div class="f-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+      </div>
+      <select required>
+        <option value="">Type of Project...</option>
+        <option>Video Editing</option><option>Graphic Design</option>
+        <option>Website Creation</option><option>Full Branding Package</option>
+        <option>Collaboration / Partnership</option><option>Just Saying Hi 👋</option>
+      </select>
+      <textarea placeholder="Tell us about your project or idea..."></textarea>
+      <button type="submit" class="sub-btn">Send Message ✨</button>
+    </form>
+    <div class="f-ok" id="f-ok">🎉 Message sent! We'll get back to you super soon.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <div class="ft-brand-name">The<b>Pixel</b>Smiths</div>
+        <p class="ft-tag">Crafting Pixels, Telling Stories</p>
+      </div>
+      <div class="ft-links">
+        <div class="ft-col"><h4>Navigate</h4><a href="#home">Home</a><a href="#work">Work</a><a href="#about">About Us</a><a href="#contact">Contact</a></div>
+        <div class="ft-col"><h4>Services</h4><a href="#work">Video Editing</a><a href="#work">Graphic Design</a><a href="#work">Web Creation</a></div>
+        <div class="ft-col"><h4>Connect</h4><a href="https://wa.me/919306644363" target="_blank">WhatsApp</a><a href="#" onclick="openLogin(event)">Team Login</a></div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p class="ft-copy">© 2025 ThePixelSmiths. Made with <span class="h">♥</span> and too many late nights.</p>
+      <div class="ft-egg" onclick="easterEgg()" title="Click me!">TPS ✦</div>
+    </div>
+  </div>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal-ov" id="login-modal">
+  <div class="modal-box">
+    <button class="m-close" onclick="closeLogin()">✕</button>
+    <div class="m-logo">The<b>Pixel</b>Smiths</div>
+    <p class="m-sub">Team Portal — Enter your credentials</p>
+    <div class="m-field"><label>Username</label><input type="text" id="lu" placeholder="Enter username" autocomplete="off"></div>
+    <div class="m-field"><label>Password</label><input type="password" id="lp" placeholder="Enter password"></div>
+    <p class="m-err" id="lerr">❌ Wrong credentials. Try again.</p>
+    <button class="m-btn" onclick="doLogin()">Enter The Studio →</button>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="admin-panel">
+  <div class="adm-hdr">
+    <div class="adm-title">The<b>Pixel</b>Smiths — Studio Dashboard 👾</div>
+    <div style="display:flex;gap:.7rem;align-items:center;flex-wrap:wrap">
+      <button class="exp-btn" onclick="exportData()">↓ Export JSON</button>
+      <button class="adm-out" onclick="logout()">Logout</button>
+    </div>
+  </div>
+  <div class="adm-body">
+    <div class="adm-tabs">
+      <button class="adm-tab on" onclick="aTab('v-sec',this)">🎬 Video</button>
+      <button class="adm-tab" onclick="aTab('d-sec',this)">🎨 Design</button>
+      <button class="adm-tab" onclick="aTab('w-sec',this)">🌐 Web</button>
+    </div>
+    <div class="adm-sec on" id="v-sec">
+      <div class="up-form">
+        <h3>+ Add Video Project</h3>
+        <div class="fg">
+          <div><label class="al">YouTube / Vimeo URL *</label><input class="ai" id="v-url" placeholder="https://youtube.com/watch?v=..."></div>
+          <div><label class="al">Project Title *</label><input class="ai" id="v-title" placeholder="Project name"></div>
+          <div class="ff"><label class="al">Description</label><input class="ai" id="v-desc" placeholder="Short description"></div>
+          <div><label class="al">Tags</label><input class="ai" id="v-tags" placeholder="Wedding, Commercial, Reel"></div>
+          <div><label class="al">Client (optional)</label><input class="ai" id="v-cli" placeholder="Client name"></div>
+        </div>
+        <button class="adm-btn" onclick="addVideo()">Add Video Project</button>
+      </div>
+      <div class="adm-grid" id="av-list"></div>
+    </div>
+    <div class="adm-sec" id="d-sec">
+      <div class="up-form">
+        <h3>+ Add Design Project</h3>
+        <div class="fg">
+          <div><label class="al">Project Title *</label><input class="ai" id="d-title" placeholder="Design name"></div>
+          <div><label class="al">Category</label><select class="ai" id="d-cat"><option>Branding</option><option>Social Media</option><option>Print</option><option>Illustration</option><option>Logo</option><option>Poster</option><option>Other</option></select></div>
+          <div class="ff"><label class="al">Description</label><input class="ai" id="d-desc" placeholder="Describe this design"></div>
+          <div><label class="al">Upload Image *</label><input class="ai" type="file" id="d-img" accept="image/*" onchange="prvw(this,'d-prv')"><img id="d-prv" class="img-prev"></div>
+          <div><label class="al">Client (optional)</label><input class="ai" id="d-cli" placeholder="Client name"></div>
+        </div>
+        <button class="adm-btn" onclick="addDesign()">Add Design Project</button>
+      </div>
+      <div class="adm-grid" id="ad-list"></div>
+    </div>
+    <div class="adm-sec" id="w-sec">
+      <div class="up-form">
+        <h3>+ Add Web Project</h3>
+        <div class="fg">
+          <div><label class="al">Project Title *</label><input class="ai" id="w-title" placeholder="Website name"></div>
+          <div><label class="al">Live URL</label><input class="ai" id="w-url" placeholder="https://yoursite.com"></div>
+          <div class="ff"><label class="al">Description</label><input class="ai" id="w-desc" placeholder="What was built"></div>
+          <div><label class="al">Screenshot *</label><input class="ai" type="file" id="w-img" accept="image/*" onchange="prvw(this,'w-prv')"><img id="w-prv" class="img-prev"></div>
+          <div><label class="al">Tech Stack</label><input class="ai" id="w-tags" placeholder="React, WordPress, Shopify"></div>
+        </div>
+        <button class="adm-btn" onclick="addWeb()">Add Web Project</button>
+      </div>
+      <div class="adm-grid" id="aw-list"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- Main Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
